@@ -1,11 +1,13 @@
 import React from 'react';
-import Products from './components/products/Products';
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
+import { Navbar, Products } from './components';
 
 const App = () => {
   return (
-    <div>
+    <ScopedCssBaseline>
+      <Navbar />
       <Products />
-    </div>
+    </ScopedCssBaseline>
   );
 };
 
