@@ -5,14 +5,14 @@ export default makeStyles((theme) => ({
   title: {
     marginTop: '5%',
   },
+  buttons: {
+    display: 'flex',
+    width: 'min-content',
+    flexWrap: 'wrap',
+  },
   emptyButton: {
     minWidth: '150px',
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: '5px',
-    },
-    [theme.breakpoints.up('xs')]: {
-      marginRight: '20px',
-    },
+    marginBottom: '10px',
   },
   checkoutButton: {
     minWidth: '150px',

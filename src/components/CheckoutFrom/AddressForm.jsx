@@ -61,6 +61,11 @@ const AddressForm = ({ checkoutToken, next }) => {
     }
   };
 
+  const onSubmit = (data) => {
+    const fullData = { ...data, shippingCountry, shippingSubdivision, shippingOption };
+    next(fullData);
+  };
+
   useEffect(() => {
     fetchShippingCountries(checkoutToken.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -83,7 +88,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         Shipping address
       </Typography>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit((data) => next(data))}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Grid container spacing={3}>
             <FormInput name='firstName' label='First name' />
             <FormInput name='lastName' label='Last name' />

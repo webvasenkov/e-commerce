@@ -15,19 +15,13 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
       <Grid container spacing={3}>
         {cart.line_items.map((item) => (
           <Grid key={item.id} item xs={12} sm={4}>
-            <CartItem
-              item={item}
-              onUpdateCartQty={onUpdateCartQty}
-              onRemoveFromCart={onRemoveFromCart}
-            />
+            <CartItem item={item} onUpdateCartQty={onUpdateCartQty} onRemoveFromCart={onRemoveFromCart} />
           </Grid>
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant='h4'>
-          Subtotal: {cart.subtotal.formatted_with_symbol}
-        </Typography>
-        <div>
+        <Typography variant='h4'>Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
+        <div className={classes.buttons}>
           <Button
             className={classes.emptyButton}
             type='button'

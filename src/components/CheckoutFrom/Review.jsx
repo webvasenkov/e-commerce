@@ -1,10 +1,7 @@
 import React from 'react';
 import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
 
-const Review = ({ checkoutToken }) => {
-  const products = checkoutToken.live.line_items;
-  const subtotal = checkoutToken.live.subtotal.formatted_with_symbol;
-
+const Review = ({ products, subtotal }) => {
   return (
     <>
       <Typography variant='h6' gutterBottom>
